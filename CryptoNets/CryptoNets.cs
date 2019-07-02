@@ -42,8 +42,9 @@ namespace CryptoNets
                 Weights = Weights.Weights_0
             };
 
-            var ActivationLayer2 = new SquareActivation() { Source = ConvLayer1 };
-
+            //var ActivationLayer2 = new SquareActivation() { Source = ConvLayer1 };
+            var ActivationLayer2 = new AppxReLUActivation() { Source = ConvLayer1 };
+            
             var DenseLayer3 = new PoolLayer()
             {
                 Source = ActivationLayer2,
@@ -56,7 +57,9 @@ namespace CryptoNets
                 WeightsScale = weightscale * weightscale
             };
 
-            var ActivationLayer4 = new SquareActivation() { Source = DenseLayer3 };
+            //var ActivationLayer4 = new SquareActivation() { Source = DenseLayer3 };
+            var ActivationLayer4 = new AppxReLUActivation() { Source = DenseLayer3 };
+
             var DenseLayer5 = new PoolLayer()
             {
                 Source = ActivationLayer4,
@@ -83,7 +86,7 @@ namespace CryptoNets
 
             int count = 0;
             int errs = 0;
-            while(count < numberOfRecords)
+            while (count < numberOfRecords)
             {
                 using (var m = network.GetNext())
                     Utils.ProcessInEnv(env =>
