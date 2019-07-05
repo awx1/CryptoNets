@@ -74,6 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseLayer.cs" />
+    <Compile Include="ReLUActivation.cs" />
+    <Compile Include="LeakyReLUActivation.cs" />
+    <Compile Include="AppxReLUActivation.cs" />
     <Compile Include="ConvolutionEngine.cs" />
     <Compile Include="LLConvReader.cs" />
     <Compile Include="BatchReader.cs" />

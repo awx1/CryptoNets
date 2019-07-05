@@ -53,9 +53,10 @@ namespace CifarCryptoNet
 
             var VectorizeLayer2 = new LLVectorizeLayer() { Source = convLayer1 };
 
-            var activationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
-
-         
+            //var activationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
+            var activationLayer3 = new AppxReLUActivation() { Source = VectorizeLayer2 };
+            //var activationLayer3 = new LeakyReLUActivation() { Source = VectorizeLayer2 };
+            //var activationLayer3 = new ReLUActivation() { Source = VectorizeLayer2 };
 
             var convEngine = new ConvolutionEngine()
             {
@@ -77,7 +78,10 @@ namespace CifarCryptoNet
             };
 
 
-            var activationLayer5 = new SquareActivation() { Source = denseLayer4 };
+            //var activationLayer5 = new SquareActivation() { Source = denseLayer4 };
+            var activationLayer5 = new AppxReLUActivation() { Source = denseLayer4 };
+            //var activationLayer5 = new LeakyReLUActivation() { Source = denseLayer4 };
+            //var activationLayer5 = new ReLUActivation() { Source = denseLayer4 };
 
             var denseLayer6 = new LLDenseLayer()
             {

@@ -14,7 +14,7 @@ namespace CryptoNets
             string fileName = "MNIST-28x28-test.txt";
             int batchSize = 8192;
             int numberOfRecords = 10000;
-            var Factory = new EncryptedSealBfvFactory(new ulong[] { 549764251649, 549764284417 }, (ulong)batchSize);
+            var Factory = new EncryptedSealBfvFactory(new ulong[] { 2148728833, 2148794369, 2149810177 }, 16384, DecompositionBitCount: 60, GaloisDecompositionBitCount: 60, SmallModulusCount: 7);
             int weightscale = 32;
 
             var ReaderLayer = new BatchReader

@@ -60,6 +60,7 @@ namespace NeuralNetworks
         {
             List<int> labelsList = new List<int>();
             List<Vector<Double>> instanceList = new List<Vector<double>>();
+            
             while (!sr.EndOfStream && labelsList.Count < MaxSlots)
             {
                 string line = sr.ReadLine();
@@ -102,6 +103,7 @@ namespace NeuralNetworks
                     instanceList.Add(features * NormalizationFactor);
                 }
             }
+            
             Labels = labelsList.ToArray();
             
             var m = new RawMatrix(Matrix<double>.Build.DenseOfRowVectors(instanceList), Scale, EMatrixFormat.ColumnMajor, 0);

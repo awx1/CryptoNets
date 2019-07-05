@@ -48,7 +48,6 @@ namespace HEWrapper
                 throw new Exception(String.Format("Data that was allocated in the following context was not disposed:\n{0}", Trace));
         }
 #endif
-
         public void Dispose()
         {
             if (leVectors != null && !DataDisposedExternaly)
@@ -135,7 +134,6 @@ namespace HEWrapper
             return new EncryptedSealBfvMatrix() { leVectors = tempVectors, Format = Format};
 
         }
-
 
         public IMatrix ElementWiseMultiply(IMatrix m, IComputationEnvironment env)
         {

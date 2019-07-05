@@ -27,9 +27,9 @@ namespace NeuralNetworks
             var cons_2 = M.Dense((int)m_row, (int)m_column, constants[2]);
 
             // Encrypts the matricies of polynomial constants
-            var sec_deg = Factory.GetEncryptedMatrix(cons_0, m_format, m_scale);
-            var fir_deg = Factory.GetEncryptedMatrix(cons_1, m_format, m_scale);
-            var zero_deg = Factory.GetEncryptedMatrix(cons_2, m_format, m_scale);
+            var sec_deg = Factory.GetPlainMatrix(cons_0, m_format, m_scale);
+            var fir_deg = Factory.GetPlainMatrix(cons_1, m_format, m_scale);
+            var zero_deg = Factory.GetPlainMatrix(cons_2, m_format, m_scale);
 
             // Builds the 2nd deg polynomial of ReLU
             var m_mult_mult = ProcessInEnv(env => m.ElementWiseMultiply(m, env));

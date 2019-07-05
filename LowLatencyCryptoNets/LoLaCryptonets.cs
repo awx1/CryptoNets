@@ -159,7 +159,10 @@ namespace LowLatencyCryptoNets
 
             var VectorizeLayer3 = new LLVectorizeLayer() { Source = ConvLayer2 };
 
-            var ActivationLayer4 = new SquareActivation() { Source = VectorizeLayer3 };
+            //var ActivationLayer4 = new SquareActivation() { Source = VectorizeLayer3 };
+            var ActivationLayer4 = new AppxReLUActivation() { Source = VectorizeLayer3 };
+            //var ActivationLayer4 = new LeakyReLUActivation() { Source = VectorizeLayer3 };
+            //var ActivationLayer4 = new ReLUActivation() { Source = VectorizeLayer3 };
 
             var DuplicateLayer5 = new LLDuplicateLayer() { Source = ActivationLayer4, Count = 16};
 
@@ -174,7 +177,10 @@ namespace LowLatencyCryptoNets
                 PackingShift = 1024,
             };
 
-            var ActivationLayer7 = new SquareActivation() { Source = DenseLayer6 };
+            //var ActivationLayer7 = new SquareActivation() { Source = DenseLayer6 };
+            var ActivationLayer7 = new AppxReLUActivation() { Source = DenseLayer6 };
+            //var ActivationLayer7 = new LeakyReLUActivation() { Source = DenseLayer6 };
+            //var ActivationLayer7 = new ReLUActivation() { Source = DenseLayer6 };
 
             var InterleaveLayer8 = new LLInterleaveLayer()
             {
@@ -237,7 +243,10 @@ namespace LowLatencyCryptoNets
             };
             var VectorizeLayer2 = new LLVectorizeLayer() { Source = ConvLayer1 };
 
-            var ActivationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
+            //var ActivationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
+            var ActivationLayer3 = new AppxReLUActivation() { Source = VectorizeLayer2 };
+            //var ActivationLayer3 = new LeakyReLUActivation() { Source = VectorizeLayer2 };
+            //var ActivationLayer3 = new ReLUActivation() { Source = VectorizeLayer2 };
 
             var DuplicateLayer4 = new LLDuplicateLayer() { Source = ActivationLayer3, Count = 8 };
 
@@ -261,7 +270,10 @@ namespace LowLatencyCryptoNets
                 Shift = -1,
                 SelectedIndices = Enumerable.Range(0, (int)DuplicateLayer4.Count).Select(i => 1023 + i * 1024).ToList()
             };
-            var ActivationLayer7 = new SquareActivation() { Source = InterleaveLayer6 };
+            //var ActivationLayer7 = new SquareActivation() { Source = InterleaveLayer6 };
+            var ActivationLayer7 = new AppxReLUActivation() { Source = InterleaveLayer6 };
+            //var ActivationLayer7 = new LeakyReLUActivation() { Source = InterleaveLayer6 };
+            //var ActivationLayer7 = new ReLUActivation() { Source = InterleaveLayer6 };
 
             var DenseLayer8 = new LLInterleavedDenseLayer()
             {
@@ -315,7 +327,10 @@ namespace LowLatencyCryptoNets
             };
             var VectorizeLayer2 = new LLVectorizeLayer() { Source = ConvLayer1 };
 
-            var ActivationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
+            //var ActivationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
+            var ActivationLayer3 = new AppxReLUActivation() { Source = VectorizeLayer2 };
+            //var ActivationLayer3 = new LeakyReLUActivation() { Source = VectorizeLayer2 };
+            //var ActivationLayer3 = new ReLUActivation() { Source = VectorizeLayer2 };
 
             var DenseLayer4 = new LLDenseLayer()
             {
@@ -372,9 +387,10 @@ namespace LowLatencyCryptoNets
 
             var VectorizeLayer2 = new LLVectorizeLayer() { Source = convLayer1 };
 
-            var activationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
-
-
+            //var activationLayer3 = new SquareActivation() { Source = VectorizeLayer2 };
+            var activationLayer3 = new AppxReLUActivation() { Source = VectorizeLayer2 };
+            //var activationLayer3 = new LeakyReLUActivation() { Source = VectorizeLayer2 };
+            //var activationLayer3 = new ReLUActivation() { Source = VectorizeLayer2 };
 
             var convEngine = new ConvolutionEngine()
             {
@@ -396,7 +412,10 @@ namespace LowLatencyCryptoNets
             };
 
 
-            var activationLayer5 = new SquareActivation() { Source = denseLayer4 };
+            //var activationLayer5 = new SquareActivation() { Source = denseLayer4 };
+            var activationLayer5 = new AppxReLUActivation() { Source = denseLayer4 };
+            //var activationLayer5 = new LeakyReLUActivation() { Source = denseLayer4 };
+            //var activationLayer5 = new ReLUActivation() { Source = denseLayer4 };
 
             var denseLayer6 = new LLDenseLayer()
             {
