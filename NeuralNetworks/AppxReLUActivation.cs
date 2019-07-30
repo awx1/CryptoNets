@@ -18,7 +18,7 @@ namespace NeuralNetworks
             var m_column = m.ColumnCount;
 
             // Polynomial Constants
-            double[] constants = {0.125, 0.25, 0.5};
+            double[] constants = {0.5, 1, 2};
 
             // Generates the matrices of polynomial constants
             var M = Matrix<double>.Build;
